@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
 class Mybutton extends StatelessWidget {
-  Color c;
-  Color c2;
   String text;
   double marge;
   Widget route;
 
-  Mybutton(this.c, this.c2, this.text, this.marge, this.route);
+  Mybutton(this.text, this.marge, this.route);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: marge),
+      margin: EdgeInsets.only(top: marge),
       decoration: BoxDecoration(
-        color: c,
+        color: Colors.deepOrangeAccent,
         borderRadius: BorderRadius.circular(50),
         boxShadow: [
           BoxShadow(
@@ -39,7 +37,7 @@ class Mybutton extends StatelessWidget {
             text.toUpperCase(),
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: c2,
+              color: Colors.white,
             ),
           ),
         ),
