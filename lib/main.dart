@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Myrow.dart';
 import 'Mybutton.dart';
+import 'pages/inscription.dart';
 
 void main() {
   runApp(const MyApp());
@@ -78,11 +79,10 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
                 Myrow(FontAwesomeIcons.user, 'Jhon'),
-                Myrow(FontAwesomeIcons.eye, 'Mot de passe'),
+                Myrow(FontAwesomeIcons.key, 'Mot de passe'),
               ],
             ),
-            Mybutton(Colors.deepOrangeAccent, Color(0xfff1f1f1), "Connexion", 0,
-                Inscription()),
+            Mybutton("Connexion", 0, Inscription()),
             Column(
               children: [
                 Container(
@@ -107,34 +107,11 @@ class _RegisterState extends State<Register> {
             ),
             Column(
               children: [
-                Mybutton(Colors.deepOrangeAccent, Colors.white,
-                    "Mot de passe oublié", 20, Inscription()),
-                Mybutton(Colors.deepOrangeAccent, Colors.white, "S'inscrire", 0,
-                    Inscription()),
+                Mybutton("Mot de passe oublié", 0, Inscription()),
+                Mybutton("S'inscrire", 20, Inscription()),
               ],
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class Inscription extends StatelessWidget {
-  const Inscription({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
         ),
       ),
     );
