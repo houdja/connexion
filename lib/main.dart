@@ -28,16 +28,53 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 40),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Image(
-              width: 300,
-              image: AssetImage("asset/login.png"),
+            Center(
+              child: Image(
+                width: 300,
+                image: AssetImage("asset/login.png"),
+              ),
             ),
-            Text('Connexion'),
+            Text(
+              'Connectez vous à votre compte',
+            ),
             Myrow(FontAwesomeIcons.user, 'Jhon'),
+            Myrow(FontAwesomeIcons.eye, 'Mot de passe'),
+            Container(
+              width: double.infinity,
+              child: TextButton(
+                onPressed: () {},
+                child: Text('Se connecter'),
+              ),
+            ),
+            Column(
+              children: [
+                Text(
+                  'Connectez vous avec',
+                ),
+                Row(
+                  children: [
+                    Icon(FontAwesomeIcons.facebook),
+                    Icon(FontAwesomeIcons.instagram),
+                    Icon(FontAwesomeIcons.google),
+                  ],
+                )
+              ],
+            ),
+            Column(
+              children: [
+                Text(
+                  'Mot de passe oublié',
+                ),
+                Text(
+                  'S\'inscrire',
+                )
+              ],
+            )
           ],
         ),
       ),
@@ -52,17 +89,15 @@ class Myrow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          Icon(
-            i,
-          ),
-          Text(
-            text,
-          ),
-        ],
-      ),
+    return Row(
+      children: [
+        Icon(
+          i,
+        ),
+        Text(
+          text,
+        ),
+      ],
     );
   }
 }
