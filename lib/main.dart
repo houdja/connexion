@@ -9,11 +9,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Color(0xff0D0D0D),
-      ),
       home: Register(),
     );
   }
@@ -30,7 +27,15 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image(
+            width: 300,
+            image: AssetImage("asset/login.png"),
+          ),
+        ],
+      ),
     );
   }
 }
