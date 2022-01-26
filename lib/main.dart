@@ -5,6 +5,7 @@ import 'Myrow.dart';
 import 'Mybutton.dart';
 import 'pages/inscription.dart';
 import 'pages/motdepasse.dart';
+import 'pages/accueil.dart';
 
 String username = 'Jhon';
 
@@ -85,7 +86,7 @@ class _RegisterState extends State<Register> {
                 Myrow(FontAwesomeIcons.key, 'Mot de passe'),
               ],
             ),
-            Mybutton("Connexion", 0, Inscription()),
+            Mybutton("Connexion", 0, Accueil()),
             Column(
               children: [
                 Container(
