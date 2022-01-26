@@ -4,6 +4,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Myrow.dart';
 import 'Mybutton.dart';
 import 'pages/inscription.dart';
+import 'pages/motdepasse.dart';
+
+String username = 'Jhon';
 
 void main() {
   runApp(const MyApp());
@@ -107,7 +110,7 @@ class _RegisterState extends State<Register> {
             ),
             Column(
               children: [
-                Mybutton("Mot de passe oublié", 0, Inscription()),
+                Mybutton("Mot de passe oublié", 0, Password()),
                 Mybutton("S'inscrire", 20, Inscription()),
               ],
             )
