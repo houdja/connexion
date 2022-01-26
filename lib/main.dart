@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,14 +28,22 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image(
-            width: 300,
-            image: AssetImage("asset/login.png"),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+              width: 300,
+              image: AssetImage("asset/login.png"),
+            ),
+            Text('Connexion'),
+            Container(
+              child: Row(
+                children: [],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
