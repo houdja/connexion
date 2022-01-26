@@ -21,8 +21,10 @@ class Inscription extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
+              margin: EdgeInsets.only(bottom: 20),
               child: Text(
                 'Inscription'.toUpperCase(),
+                style: TextStyle(fontSize: 22),
               ),
             ),
             Myrow(FontAwesomeIcons.user, "Nom d'utilisateur"),
