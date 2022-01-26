@@ -31,36 +31,38 @@ class _RegisterState extends State<Register> {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 40),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Center(
-              child: Image(
-                width: 300,
-                image: AssetImage("asset/login.png"),
-              ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Connectez vous à votre compte'.toUpperCase(),
+                  style: TextStyle(fontSize: 22),
+                ),
+                Myrow(FontAwesomeIcons.user, 'Jhon'),
+                Myrow(FontAwesomeIcons.eye, 'Mot de passe'),
+              ],
             ),
-            Text(
-              'Connectez vous à votre compte',
-            ),
-            Myrow(FontAwesomeIcons.user, 'Jhon'),
-            Myrow(FontAwesomeIcons.eye, 'Mot de passe'),
             Container(
               width: double.infinity,
               child: TextButton(
                 onPressed: () {},
-                child: Text('Se connecter'),
+                child: Text(
+                  'Se connecter'.toUpperCase(),
+                ),
               ),
             ),
             Column(
               children: [
                 Text(
-                  'Connectez vous avec',
+                  'Connectez vous avec'.toUpperCase(),
                 ),
                 Row(
                   children: [
-                    Icon(FontAwesomeIcons.facebook),
-                    Icon(FontAwesomeIcons.instagram),
-                    Icon(FontAwesomeIcons.google),
+                    const Icon(FontAwesomeIcons.facebook),
+                    const Icon(FontAwesomeIcons.instagram),
+                    const Icon(FontAwesomeIcons.google),
                   ],
                 )
               ],
@@ -68,10 +70,10 @@ class _RegisterState extends State<Register> {
             Column(
               children: [
                 Text(
-                  'Mot de passe oublié',
+                  'Mot de passe oublié'.toUpperCase(),
                 ),
                 Text(
-                  'S\'inscrire',
+                  'S\'inscrire'.toUpperCase(),
                 )
               ],
             )
@@ -89,15 +91,28 @@ class Myrow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(
-          i,
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.symmetric(vertical: 15),
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 0.5,
+          color: Colors.deepPurple,
         ),
-        Text(
-          text,
-        ),
-      ],
+      ),
+      child: Row(
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(12, 12, 30, 12),
+            child: Icon(
+              i,
+            ),
+          ),
+          Text(
+            text.toUpperCase(),
+          ),
+        ],
+      ),
     );
   }
 }
