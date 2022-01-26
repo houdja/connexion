@@ -37,13 +37,31 @@ class _RegisterState extends State<Register> {
               image: AssetImage("asset/login.png"),
             ),
             Text('Connexion'),
-            Container(
-              child: Row(
-                children: [],
-              ),
-            )
+            Myrow(FontAwesomeIcons.user, 'Jhon'),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Myrow extends StatelessWidget {
+  IconData i;
+  String text;
+  Myrow(this.i, this.text);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        children: [
+          Icon(
+            i,
+          ),
+          Text(
+            text,
+          ),
+        ],
       ),
     );
   }
