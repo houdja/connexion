@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class Mybutton extends StatelessWidget {
   String text;
   double topMarge;
+  void myFuntion;
 
-  Mybutton(this.text, this.topMarge);
+  Mybutton(this.text, this.topMarge, this.myFuntion);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,9 @@ class Mybutton extends StatelessWidget {
       ),
       width: double.infinity,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          myFuntion;
+        },
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 20),
           child: Text(
