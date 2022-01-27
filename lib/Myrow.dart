@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Myrow extends StatelessWidget {
-  IconData i;
   String text;
-  Myrow(this.i, this.text);
+  Myrow(this.text);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +10,6 @@ class Myrow extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.only(top: 30),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.2),
@@ -22,19 +20,13 @@ class Myrow extends StatelessWidget {
         ],
         color: Color(0xfff1f1f1),
       ),
-      child: Row(
-        children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(30, 15, 40, 15),
-            child: Icon(
-              i,
-              size: 20,
-            ),
+      child: FractionallySizedBox(
+        widthFactor: 1,
+        child: TextFormField(
+          decoration: InputDecoration(
+            labelText: text,
           ),
-          Text(
-            text.toUpperCase(),
-          ),
-        ],
+        ),
       ),
     );
   }

@@ -82,8 +82,8 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                 ),
-                Myrow(FontAwesomeIcons.user, 'Identifiant'),
-                Myrow(FontAwesomeIcons.key, 'Mot de passe'),
+                Myrow('Identifiant'),
+                Myrow('Mot de passe'),
                 Mybutton("Connexion", 20, Accueil()),
               ],
             ),
@@ -104,7 +104,8 @@ class _RegisterState extends State<Register> {
                   children: [
                     socialIcon(FontAwesomeIcons.google),
                     socialIcon(FontAwesomeIcons.facebookF),
-                    socialIcon(FontAwesomeIcons.instagram),
+                    socialIcon(FontAwesomeIcons.apple),
+                    socialIcon(FontAwesomeIcons.twitter),
                   ],
                 )
               ],

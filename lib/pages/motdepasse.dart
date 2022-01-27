@@ -27,7 +27,7 @@ class Password extends StatelessWidget {
                 style: TextStyle(fontSize: 22),
               ),
             ),
-            Myrow(FontAwesomeIcons.at, "Entrez votre email"),
+            Myrow("Entrez votre email"),
             Mybutton("Reinitialiser le mot de passe", 30, Register())
           ],
         ),
