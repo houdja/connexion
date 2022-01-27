@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../Myrow.dart';
 import '../Mybutton.dart';
-import '../main.dart';
 
 class Inscription extends StatelessWidget {
-  const Inscription({Key? key}) : super(key: key);
+  test() {
+    print('eeee');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +28,14 @@ class Inscription extends StatelessWidget {
                 style: TextStyle(fontSize: 22),
               ),
             ),
-            Myrow("Nom d'utilisateur"),
-            Myrow("Mot de passe"),
-            Myrow("Retapper mot de passe"),
-            Myrow("Email"),
-            Mybutton("S'enregistrer", 30, Register())
+            Myrow("Nom d'utilisateur", FontAwesomeIcons.user),
+            Myrow("Mot de passe", FontAwesomeIcons.key),
+            Myrow("Retapper mot de passe", FontAwesomeIcons.key),
+            Myrow("Email", FontAwesomeIcons.at),
+            Mybutton(
+              "S'enregistrer",
+              30,
+            )
           ],
         ),
       ),

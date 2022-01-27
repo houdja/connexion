@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Mybutton extends StatelessWidget {
+class MyRedirectbutton extends StatelessWidget {
   String text;
   double topMarge;
+  Widget route;
 
-  Mybutton(this.text, this.topMarge);
+  MyRedirectbutton(this.text, this.topMarge, this.route);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,12 @@ class Mybutton extends StatelessWidget {
       ),
       width: double.infinity,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => route),
+          );
+        },
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 20),
           child: Text(

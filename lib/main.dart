@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Myrow.dart';
 import 'Mybutton.dart';
+import 'MyRedirectButton.dart';
 import 'pages/inscription.dart';
 import 'pages/motdepasse.dart';
-import 'pages/accueil.dart';
 
 String username = 'Jhon';
 
@@ -60,6 +60,10 @@ class _RegisterState extends State<Register> {
     );
   }
 
+  void test() {
+    print('aaaa');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,9 +86,12 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                 ),
-                Myrow('Identifiant'),
-                Myrow('Mot de passe'),
-                Mybutton("Connexion", 20, Accueil()),
+                Myrow('Identifiant', FontAwesomeIcons.user),
+                Myrow('Mot de passe', FontAwesomeIcons.key),
+                Mybutton(
+                  "Connexion",
+                  20,
+                ),
               ],
             ),
             Column(
@@ -112,8 +119,8 @@ class _RegisterState extends State<Register> {
             ),
             Column(
               children: [
-                Mybutton("Mot de passe oublié", 0, Password()),
-                Mybutton("S'inscrire", 20, Inscription()),
+                MyRedirectbutton("Mot de passe oublié", 0, Password()),
+                MyRedirectbutton("S'inscrire", 20, Inscription()),
               ],
             )
           ],

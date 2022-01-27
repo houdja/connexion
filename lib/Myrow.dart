@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 class Myrow extends StatelessWidget {
   String text;
-  Myrow(this.text);
+  IconData i;
+  final myText = TextEditingController();
+
+  Myrow(this.text, this.i);
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +26,12 @@ class Myrow extends StatelessWidget {
       child: FractionallySizedBox(
         widthFactor: 1,
         child: TextFormField(
+          controller: myText,
           decoration: InputDecoration(
             labelText: text,
+            prefixIcon: Icon(
+              i,
+            ),
           ),
         ),
       ),
