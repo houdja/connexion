@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class Myrow extends StatelessWidget {
   String text;
   IconData i;
-  final myText = TextEditingController();
+  final control;
 
-  Myrow(this.text, this.i);
+  Myrow(this.text, this.i, this.control);
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,15 @@ class Myrow extends StatelessWidget {
       child: FractionallySizedBox(
         widthFactor: 1,
         child: TextFormField(
-          controller: myText,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter some text';
+            }
+            return null;
+          },
+          controller: control,
           decoration: InputDecoration(
+            border: InputBorder.none,
             labelText: text,
             prefixIcon: Icon(
               i,
