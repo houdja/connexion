@@ -1,10 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Myrow.dart';
-import 'Mybutton.dart';
 import 'MyRedirectButton.dart';
 import 'pages/inscription.dart';
 import 'pages/motdepasse.dart';
@@ -66,14 +63,10 @@ class _RegisterState extends State<Register> {
     );
   }
 
-  test() {
-    print(11);
-  }
-
   login() {
     String nomLogin = nom.text;
-    String passwordL = password.text;
-    print(nomLogin + " " + passwordL);
+    String passwordLogin = password.text;
+    print(nomLogin + " " + passwordLogin);
   }
 
   @override
@@ -85,55 +78,58 @@ class _RegisterState extends State<Register> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text('LOGO'),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: Text(
-                    'Connectez vous à votre compte'.toUpperCase(),
-                    style: TextStyle(
-                      fontSize: 22,
-                      color: Colors.black,
+            Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(bottom: 20),
+                    child: Text(
+                      'Connectez vous à votre compte'.toUpperCase(),
+                      style: TextStyle(
+                        fontSize: 22,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
-                ),
-                Myrow('Identifiant', FontAwesomeIcons.user, nom),
-                Myrow('Mot de passe', FontAwesomeIcons.key, password),
-                Container(
-                  margin: EdgeInsets.only(top: 30),
-                  decoration: BoxDecoration(
-                    color: Colors.deepOrangeAccent,
-                    borderRadius: BorderRadius.circular(50),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 0,
-                        blurRadius: 10,
-                        offset: Offset(0, 5), // changes position of shadow
-                      )
-                    ],
-                  ),
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        login();
-                      }
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Text(
-                        'Connexion'.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
+                  Myrow('Identifiant', FontAwesomeIcons.user, nom),
+                  Myrow('Mot de passe', FontAwesomeIcons.key, password),
+                  Container(
+                    margin: EdgeInsets.only(top: 30),
+                    decoration: BoxDecoration(
+                      color: Colors.deepOrangeAccent,
+                      borderRadius: BorderRadius.circular(50),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          spreadRadius: 0,
+                          blurRadius: 10,
+                          offset: Offset(0, 5), // changes position of shadow
+                        )
+                      ],
+                    ),
+                    width: double.infinity,
+                    child: TextButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          login();
+                        }
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 20),
+                        child: Text(
+                          'Connexion'.toUpperCase(),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Column(
               children: [
