@@ -23,21 +23,25 @@ class Myrow extends StatelessWidget {
         ],
         color: Color(0xfff1f1f1),
       ),
-      child: FractionallySizedBox(
-        widthFactor: 1,
-        child: TextFormField(
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter some text';
-            }
-            return null;
-          },
-          controller: control,
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            labelText: text,
-            prefixIcon: Icon(
-              i,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+        child: FractionallySizedBox(
+          widthFactor: 1,
+          child: TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Veuillez remplir les champs';
+              }
+              return null;
+            },
+            controller: control,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              labelText: text,
+              prefixIcon: Icon(
+                i,
+                size: 20,
+              ),
             ),
           ),
         ),
