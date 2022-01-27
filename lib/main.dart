@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -8,6 +10,9 @@ import 'pages/inscription.dart';
 import 'pages/motdepasse.dart';
 
 String username = 'Jhon';
+
+TextEditingController nom = TextEditingController();
+TextEditingController password = TextEditingController();
 
 void main() {
   runApp(const MyApp());
@@ -37,6 +42,7 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   Widget socialIcon(IconData i) {
     return Container(
       decoration: BoxDecoration(
@@ -60,8 +66,14 @@ class _RegisterState extends State<Register> {
     );
   }
 
-  void test() {
-    print('aaaa');
+  test() {
+    print(11);
+  }
+
+  login() {
+    String nomLogin = nom.text;
+    String passwordL = password.text;
+    print(nomLogin + " " + passwordL);
   }
 
   @override
@@ -86,11 +98,40 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                 ),
-                Myrow('Identifiant', FontAwesomeIcons.user),
-                Myrow('Mot de passe', FontAwesomeIcons.key),
-                Mybutton(
-                  "Connexion",
-                  20,
+                Myrow('Identifiant', FontAwesomeIcons.user, nom),
+                Myrow('Mot de passe', FontAwesomeIcons.key, password),
+                Container(
+                  margin: EdgeInsets.only(top: 30),
+                  decoration: BoxDecoration(
+                    color: Colors.deepOrangeAccent,
+                    borderRadius: BorderRadius.circular(50),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        spreadRadius: 0,
+                        blurRadius: 10,
+                        offset: Offset(0, 5), // changes position of shadow
+                      )
+                    ],
+                  ),
+                  width: double.infinity,
+                  child: TextButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        login();
+                      }
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      child: Text(
+                        'Connexion'.toUpperCase(),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
