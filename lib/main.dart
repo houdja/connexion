@@ -99,7 +99,7 @@ class _RegisterState extends State<Register> {
                     margin: EdgeInsets.only(top: 30),
                     decoration: BoxDecoration(
                       color: Colors.deepOrangeAccent,
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.2),
