@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class Mybutton extends StatelessWidget {
   String text;
-  double marge;
+  double topMarge;
   Widget route;
 
-  Mybutton(this.text, this.marge, this.route);
+  Mybutton(this.text, this.topMarge, this.route);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: marge),
+      margin: EdgeInsets.only(top: topMarge),
       decoration: BoxDecoration(
         color: Colors.deepOrangeAccent,
         borderRadius: BorderRadius.circular(50),

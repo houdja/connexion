@@ -11,7 +11,7 @@ class Password extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Accueil'),
+        title: const Text('Connexion'),
         backgroundColor: Colors.deepOrangeAccent,
       ),
       body: Padding(

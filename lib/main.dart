@@ -41,7 +41,7 @@ class _RegisterState extends State<Register> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        color: Color(0xfff1f1f1),
+        color: Colors.black,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.3),
@@ -54,7 +54,7 @@ class _RegisterState extends State<Register> {
       padding: EdgeInsets.all(12.5),
       child: Icon(
         i,
-        color: Colors.black,
+        color: Colors.white,
         size: 22,
       ),
     );
@@ -82,15 +82,15 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                 ),
-                Myrow(FontAwesomeIcons.user, 'Jhon'),
+                Myrow(FontAwesomeIcons.user, 'Identifiant'),
                 Myrow(FontAwesomeIcons.key, 'Mot de passe'),
+                Mybutton("Connexion", 20, Accueil()),
               ],
             ),
-            Mybutton("Connexion", 0, Accueil()),
             Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(bottom: 30),
+                  margin: EdgeInsets.only(bottom: 40),
                   child: Text(
                     'Connectez vous avec'.toUpperCase(),
                     style: TextStyle(
@@ -100,10 +100,10 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     socialIcon(FontAwesomeIcons.google),
-                    socialIcon(FontAwesomeIcons.facebook),
+                    socialIcon(FontAwesomeIcons.facebookF),
                     socialIcon(FontAwesomeIcons.instagram),
                   ],
                 )

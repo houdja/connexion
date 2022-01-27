@@ -7,10 +7,6 @@ class Accueil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Accueil'),
-        backgroundColor: Colors.deepOrangeAccent,
-      ),
       body: Center(
         child: Text(
           "Bonjour $username",

@@ -11,7 +11,7 @@ class Inscription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Inscription'),
+        title: const Text('Connexion'),
         backgroundColor: Colors.deepOrangeAccent,
       ),
       body: Padding(
