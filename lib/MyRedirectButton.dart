@@ -13,7 +13,7 @@ class MyRedirectbutton extends StatelessWidget {
       margin: EdgeInsets.only(top: topMarge),
       decoration: BoxDecoration(
         color: Colors.deepOrangeAccent,
-        borderRadius: BorderRadius.circular(50),
+        borderRadius: BorderRadius.circular(0),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.2),

@@ -5,14 +5,21 @@ import 'Myrow.dart';
 import 'MyRedirectButton.dart';
 import 'pages/inscription.dart';
 import 'pages/motdepasse.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 String username = 'Jhon';
 
 TextEditingController nom = TextEditingController();
 TextEditingController password = TextEditingController();
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -61,6 +68,22 @@ class _RegisterState extends State<Register> {
         size: 22,
       ),
     );
+  }
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+  yo() async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: nom.text, password: password.text);
+      print('success');
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    }
   }
 
   login() {
@@ -114,6 +137,7 @@ class _RegisterState extends State<Register> {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           login();
+                          yo();
                         }
                       },
                       child: Padding(
