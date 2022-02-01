@@ -5,6 +5,7 @@ import 'Myrow.dart';
 import 'MyRedirectButton.dart';
 import 'pages/inscription.dart';
 import 'pages/motdepasse.dart';
+import 'pages/accueil.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -77,6 +78,10 @@ class _RegisterState extends State<Register> {
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: nom.text, password: password.text);
       print('success');
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Accueil()),
+      );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');
